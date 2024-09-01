@@ -8,7 +8,7 @@ class Hadethtab extends StatefulWidget {
 }
 
 class _HadethtabState extends State<Hadethtab> {
-  List<HadthItem> hadithList = [];
+  List<HadithItem> hadithList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,8 @@ class _HadethtabState extends State<Hadethtab> {
                 Expanded(
                   flex: 2,
                   child: ListView.separated(
-                      itemBuilder: (context, index) => hadethTitleWidget(
-                          hadthTitle: hadithList[index].title, index: index),
+                      itemBuilder: (context, index) =>
+                          hadethTitleWidget(hadithItem: hadithList[index]),
                       separatorBuilder: (context, index) => Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 28, vertical: 2),
@@ -56,16 +56,17 @@ class _HadethtabState extends State<Hadethtab> {
       hadethLines.removeAt(0);
       String hadthContent = hadethLines.join('\n');
 
-      HadthItem hathItem = HadthItem(title: hadthTitle, content: hadthContent);
+      HadithItem hathItem =
+          HadithItem(title: hadthTitle, content: hadthContent);
       hadithList.add(hathItem);
     }
     setState(() {});
   }
 }
 
-class HadthItem {
+class HadithItem {
   String title;
   String content;
 
-  HadthItem({required this.title, required this.content});
+  HadithItem({required this.title, required this.content});
 }

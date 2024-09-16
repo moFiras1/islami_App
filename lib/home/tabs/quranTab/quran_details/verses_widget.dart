@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class versesWidget extends StatelessWidget {
@@ -9,17 +8,12 @@ class versesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
       alignment: Alignment.center,
-      child: Text(
-        verses,
-        textAlign: TextAlign.center,
-        textDirection: TextDirection.rtl,
-        style: TextStyle(
-          fontWeight: FontWeight.w400,
-          fontSize: 20,
-        ),
-      ),
+      child: Text(verses,
+          textAlign: TextAlign.center,
+          textDirection: TextDirection.rtl,
+          style: Theme.of(context).textTheme.bodySmall),
     );
   }
 }

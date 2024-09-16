@@ -1,29 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/home/tabs/hadethTab/hadith_details_screen/hadith_details_screen.dart';
+
+import 'hadethTabScreen.dart';
 
 class hadethTitleWidget extends StatelessWidget {
-  String hadthTitle;
-  int index;
+  HadithItem hadithItem;
 
-  hadethTitleWidget({required this.hadthTitle, required this.index});
+  hadethTitleWidget({required this.hadithItem});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 4),
-      child: Text(
-        hadthTitle,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontSize: 20, fontWeight: FontWeight.w400, color: Colors.black),
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          HadithDetailsScreen.routeName,
+          arguments: hadithItem,
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 4),
+        child: Text(
+          hadithItem.title,
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
       ),
     );
   }
 }
 
-class hadethArgument {
-  String hadthTitle;
-
-  int index;
-
-  hadethArgument({required this.hadthTitle, required this.index});
-}

@@ -13,9 +13,10 @@ class _HadethtabState extends State<Hadethtab> {
   @override
   Widget build(BuildContext context) {
     if (hadithList.isEmpty) loadHadethFile();
+
     return Container(
       child: hadithList.isEmpty
-          ? Center(
+          ? const Center(
               child: CircularProgressIndicator(),
             )
           : Column(
@@ -29,11 +30,11 @@ class _HadethtabState extends State<Hadethtab> {
                       itemBuilder: (context, index) =>
                           hadethTitleWidget(hadithItem: hadithList[index]),
                       separatorBuilder: (context, index) => Padding(
-                            padding: const EdgeInsets.symmetric(
+                            padding: EdgeInsets.symmetric(
                                 horizontal: 28, vertical: 2),
                             child: Divider(
                               height: 2,
-                              color: Color(0xFFB7935F),
+                              color: Theme.of(context).dividerColor,
                             ),
                           ),
                       itemCount: hadithList.length),

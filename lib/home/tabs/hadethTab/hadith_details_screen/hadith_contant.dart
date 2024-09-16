@@ -9,14 +9,13 @@ class HadithContantWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       child: SingleChildScrollView(
         child: Text(
           Content,
           textAlign: TextAlign.center,
           textDirection: TextDirection.rtl,
-          style: TextStyle(
-              fontWeight: FontWeight.w400, color: Colors.black, fontSize: 20),
+          style: Theme.of(context).textTheme.bodySmall,
         ),
       ),
     );

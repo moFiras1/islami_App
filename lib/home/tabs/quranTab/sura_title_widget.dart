@@ -7,7 +7,10 @@ class SuraTitleWidget extends StatelessWidget {
   int index;
 
   SuraTitleWidget(
-      {required this.suraTitle, required this.numOfVerse, required this.index});
+      {super.key,
+      required this.suraTitle,
+      required this.numOfVerse,
+      required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -24,25 +27,18 @@ class SuraTitleWidget extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(
                   suraTitle,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 25,
-                      color: Colors.black),
-                ),
+                    style: Theme.of(context).textTheme.titleMedium),
               ),
             ),
             Container(
-              color: Color(0xFFB7935F),
+              color: Theme.of(context).dividerColor,
               width: 2,
             ),
             Expanded(
               child: Container(
                 alignment: Alignment.center,
                 child: Text(numOfVerse,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 25,
-                        color: Colors.black)),
+                    style: Theme.of(context).textTheme.titleMedium),
               ),
             ),
           ],

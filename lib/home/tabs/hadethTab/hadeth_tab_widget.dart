@@ -23,8 +23,7 @@ class hadethTitleWidget extends StatelessWidget {
         child: Text(
           hadithItem.title,
           textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w400, color: Colors.black),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
     );
